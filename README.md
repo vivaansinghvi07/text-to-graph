@@ -7,7 +7,8 @@ To use, install the requirements using `$ pip install -r requirements.txt`. Then
 
 ```
 $ python3 main.py [-h] [--font_family FONT_FAMILY] [--polynomial] side_length text point_count
-
+```
+```
 positional arguments:
   side_length           The side length of the square which text is rendered in
   text                  The text that will be rendered by the program
