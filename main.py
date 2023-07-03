@@ -40,7 +40,7 @@ def generate_points(mappings: dict[Character, np.ndarray], k: int, text: str, n:
         while len(points) < n:
             x, y = [k*random.random() for _ in range(2)]
             if char_map[math.floor(y)][math.floor(x)]:
-                points.append(Point(x, -y))
+                points.append(Point(x/k, -y/k))
         total_points.append(points)
     return total_points
 
