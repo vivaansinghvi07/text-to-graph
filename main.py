@@ -29,6 +29,9 @@ def generate_character_mappings(k: int, text: str, addr: str) -> dict[Character,
     return mappings
 
 def generate_points(mappings: dict[Character, np.ndarray], k: int, text: str, n: int) -> list[list[Point]]:
+    """
+    Generates the paths that the points must take
+    """
     total_points = []
     for char in text:
         points = []
@@ -41,6 +44,9 @@ def generate_points(mappings: dict[Character, np.ndarray], k: int, text: str, n:
     return total_points
 
 def interpolate_poly(points: list[list[Point]], n: int):
+    """
+    Determines the polynomial interpolation for n points that pass through their predetermined paths
+    """
     polys = []
     for point_id in range(n):
         interpolation_data = [points[i][point_id] for i in range(len(points))]
@@ -56,6 +62,7 @@ def get_args() -> Arguments:
     Returns the arguments to customize generation. 
       - side_length: The side length
       - text: The text to be displayed
+      - point_count: The number of points being displayed
       - font_family: The font that is used
     """
     parser = ArgumentParser()
