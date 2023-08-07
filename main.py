@@ -1,4 +1,3 @@
-import json
 import numpy as np
 import random
 import math
@@ -100,6 +99,8 @@ def main():
     k = args.side_length
     n = args.point_count
     text = re.sub(r'\s', '', args.text)
+    if args.polynomial:
+        text += ".."
     font_family = args.font_family
     if font_family is None:
         font_family = DEFAULT_FONT
